@@ -7,7 +7,46 @@ const app = express();
 
 app.use(express.json()); // allows us to accept JSON data from req.body
 
-app.post("/api/createproducts", async (req,res) => {
+// get all products
+app.get("/api/product/", async(req, res) => {
+    try {
+        const product = await Product.find({});
+        return res.status(200).json({
+            success: true,
+            data: product
+        });
+    } catch (error) {
+        console.error("error fetching all the products");
+        return res.status(500).json({
+            success: false,
+            message: "Server Error"
+        })
+    }
+});
+
+
+//delete a product entry
+app.delete("/api/product/:id", async(req, res) => {
+    const {id} = req.params;
+
+    try{
+        await Product.findByIdAndDelete(id);
+        return res.status(200).json({
+            success: true,
+            message: "Product successfully deleted"
+        });
+    } catch (error){
+        console.error("Product not found", error.message)
+        return res.status(404).json({
+            success: false,
+            message: "Product not found"
+        })
+    }
+});
+
+
+// create a new product entry
+app.post("/api/product", async (req,res) => {
     const product = req.body; // User api request body
 
     //check if the request body is valid
@@ -33,7 +72,6 @@ app.post("/api/createproducts", async (req,res) => {
             message: "Server Error, could not create a new product"
         })
     }
-
 });
 
 app.listen(5000, () => {
