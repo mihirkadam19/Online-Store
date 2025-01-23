@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// creating a new model, which creates a new collection if it does not exists
 const productSchema = new mongoose.Schema({
     name: {
         type: String,

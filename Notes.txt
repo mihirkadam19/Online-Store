@@ -11,3 +11,7 @@ nodemon can be used to dynamically deploy the changes without needing to restart
 use async to use keyword 'await'
 
 app.use(express.json()) allows use to user input data as JSON other wise we can't parse the user input data. For example, without this initialization we can't use req.body.name or req.body.price
+
+In product.model.js we create a model, this model interacts with the corresponding collection in MongoDB, if a collection does not exists it will create a new collection.
+
+Database name is provided in the connection string. If the database name provided in the connection string does not exists it will create a new database.
