@@ -2,10 +2,38 @@
 import express from 'express';
 import {connectDB} from './config/db.js';
 import Product from './models/product.model.js';
+import mongoose from 'mongoose';
 
 const app = express();
 
 app.use(express.json()); // allows us to accept JSON data from req.body
+
+// update product
+app.put("/api/product/:id", async(req, res) => {
+    const {id} = req.params;
+    const product = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({
+            success: false,
+            message: "Product Not Found"
+        })
+    }
+
+    try {
+        const udpatedProduct = Product.findByIdAndUpdate(id, product, {new: true});
+        return res.status(200).json({
+            success: true,
+            data: udpatedProduct
+        });
+    } catch (error){
+        console.log("Server Error", error.message)
+        return res.status(500).json({
+            success: false,
+            message: `Server error ${error.message}`
+        });
+    }
+});
 
 // get all products
 app.get("/api/product/", async(req, res) => {
