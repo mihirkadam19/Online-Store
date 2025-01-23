@@ -1,0 +1,24 @@
+{
+  "name": "online-store",
+  "version": "1.0.0",
+  "description": "MERN stack app for a online store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/mk2436/Online-Store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mk2436/Online-Store/issues"
+  },
+  "homepage": "https://github.com/mk2436/Online-Store#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
