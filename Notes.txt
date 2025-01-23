@@ -1,0 +1,9 @@
+My Learnings
+
+express is the web framework that will make setting up the HTTP server and its requests easier.
+
+.listen sets up an HTTP server. Get, POST will require different call back function that can handle the requests specifically.
+
+package.json can hold alias for scripts. Scripts can be to run server.
+
+nodemon can be used to dynamically deploy the changes without needing to restart the server.
