@@ -8,7 +8,7 @@ package.json can hold alias for scripts. Scripts can be to run server.
 
 nodemon can be used to dynamically deploy the changes without needing to restart the server.
 
-use async to use keyword 'await'
+NEEDS TO BE STUDIED MORE use async to use keyword 'await'
 
 app.use(express.json()) allows use to user input data as JSON other wise we can't parse the user input data. For example, without this initialization we can't use req.body.name or req.body.price
 
