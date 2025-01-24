@@ -21,7 +21,7 @@ app.put("/api/product/:id", async(req, res) => {
     }
 
     try {
-        const udpatedProduct = Product.findByIdAndUpdate(id, product, {new: true});
+        const udpatedProduct = await Product.findByIdAndUpdate(id, product, {new: true});
         return res.status(200).json({
             success: true,
             data: udpatedProduct
