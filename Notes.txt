@@ -24,3 +24,36 @@ newProduct will be used to take new value from input and setNewProduct will used
 onChange={(e) => setNewProduct({...newProduct, image: e.target.value})}
 this will be added to the input field, where onChange is triggered when the user inputs something, e is the event object that passes the value of the user input event to setNewProduct which then uses the existing values of the state and updates the image field value with the user input.
 So it will first take name pass it to price, the name,price will be passed to image. 
+
+import { create } from "zustand";
+export const useProductStore = create((set) => ({
+    products: [],
+    setProducts: (products) => set({products}),
+}));
+Here create is hook from zustand that is used to update state. It takes a callback functino as its argument.
+
+What Happens When useProductStore Is Called:
+useProductStore Is the Custom Hook:
+When you call useProductStore in your component, it's not actually re-running the create function each time. Instead, the create function initially sets up the store (when your app starts), and useProductStore gives you access to that store.
+What create Does:
+
+create is called once (when your app or module is loaded) and sets up the Zustand store by:
+Calling the callback function you provided (your arrow function).
+Passing the set function to your callback.
+
+The Callback Function:
+The arrow function (set) => ({ ... }) defines:
+The initial state of the store (products: []).
+Any updater functions you want to use (setProducts in this case).
+The callback returns an object (state and updater functions) to create.
+
+The Store Is Created:
+create takes the object returned by your callback and builds a Zustand store from it.
+This store contains:
+The state (e.g., products).
+Functions to update the state (e.g., setProducts).
+
+Using useProductStore in Components:
+When you call useProductStore in your component:
+Zustand connects you to the store.
+You get access to the state (products) and any updater functions (setProducts) that were defined in the callback.
