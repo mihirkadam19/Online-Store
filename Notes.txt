@@ -15,3 +15,6 @@ app.use(express.json()) allows use to user input data as JSON other wise we can'
 In product.model.js we create a model, this model interacts with the corresponding collection in MongoDB, if a collection does not exists it will create a new collection.
 
 Database name is provided in the connection string. If the database name provided in the connection string does not exists it will create a new database.
+
+
+useState in REACT. This is used to store the state, that is user input, which can re-rendered(used again the code).
