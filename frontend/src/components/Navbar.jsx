@@ -12,11 +12,11 @@ const Navbar = () => {
     const {colorMode, toggleColorMode} = useColorMode();
 
     const rattle = keyframes`
-        0% { transform: rotate(0deg); }
-        20% { transform: rotate(-10deg); }
-        40% { transform: rotate(10deg); }
-        60% { transform: rotate(-10deg); }
-        80% { transform: rotate(10deg); }
+        0% { transform: rotate(0deg); color:violet;}
+        20% { transform: rotate(-10deg);}
+        40% { transform: rotate(10deg); color:violet;}
+        60% { transform: rotate(-10deg);}
+        80% { transform: rotate(10deg); color:violet;}
         100% {transform: rotate(180deg);}
         `;
 
