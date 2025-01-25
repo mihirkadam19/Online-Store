@@ -18,3 +18,9 @@ Database name is provided in the connection string. If the database name provide
 
 
 useState in REACT. This is used to store the state, that is user input, which can re-rendered(used again the code).
+const [newProduct, setNewProduct] = useState()
+newProduct will be used to take new value from input and setNewProduct will used to update the state.
+
+onChange={(e) => setNewProduct({...newProduct, image: e.target.value})}
+this will be added to the input field, where onChange is triggered when the user inputs something, e is the event object that passes the value of the user input event to setNewProduct which then uses the existing values of the state and updates the image field value with the user input.
+So it will first take name pass it to price, the name,price will be passed to image. 
