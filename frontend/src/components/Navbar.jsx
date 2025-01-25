@@ -38,6 +38,9 @@ const Navbar = () => {
                 textAlign={"center"}
                 bgGradient={"linear(to-r, cyan.700, green.500, blue.400)"}
                 bgClip={"text"}
+                _hover={{
+                    bgGradient:"linear(to-r, blue.700, green.300, cyan.400)"
+                }}
             >
                 <Link to={"/"}>Product Store 🛒</Link>
             </Text>
