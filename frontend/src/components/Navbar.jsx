@@ -5,10 +5,21 @@ import { Link, Links } from 'react-router-dom';
 import {IoMoon} from 'react-icons/io5';
 import {LuSun} from 'react-icons/lu';
 import { FaHome } from "react-icons/fa";
+import { keyframes } from "@emotion/react";
 
 
 const Navbar = () => {
     const {colorMode, toggleColorMode} = useColorMode();
+
+    const rattle = keyframes`
+        0% { transform: rotate(0deg); }
+        20% { transform: rotate(-10deg); }
+        40% { transform: rotate(10deg); }
+        60% { transform: rotate(-10deg); }
+        80% { transform: rotate(10deg); }
+        100% {transform: rotate(180deg);}
+        `;
+
   return (
     <Container maxW={"1140px"} px={"4"}> 
         <Flex
@@ -33,7 +44,12 @@ const Navbar = () => {
             <HStack spacing={2} alignItems={"center"}>
 
                 <Link to={"/"}>
-                    <Button>
+                    <Button
+                        _hover={{
+                            animation: `${rattle} 0.5s ease-in-out`,
+                            transformOrigin: "center",
+                        }}
+                    >
                         <FaHome fontSize={20} />
                     </Button>
                 </Link>
