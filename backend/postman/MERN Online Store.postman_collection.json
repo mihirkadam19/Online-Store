@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "6e68fa85-7725-4cbe-a8e4-3742f7b6d01c",
+		"name": "MERN Online Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28670784"
+	},
+	"item": [
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"phone\",\r\n    \"price\": 13240,\r\n    \"image\": \"image/url1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"smartwatch\",\r\n    \"price\": 344,\r\n    \"image\": \"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJEzdL-P5pSyqvc0Q39QfFcOb-zWqMsMdTphsb0nJ-uuQ4fkU3k7BSvxPvOFWme5OPixSLWz0Ck44zlNbPh4zAKv4o6u5prAXg2zu3SlGqoxBpFYAJ0PfytUk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/product/679322c3fd48d623b0edae0f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product",
+						"679322c3fd48d623b0edae0f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"smartwatch\",\r\n    \"price\": 344,\r\n    \"image\": \"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJEzdL-P5pSyqvc0Q39QfFcOb-zWqMsMdTphsb0nJ-uuQ4fkU3k7BSvxPvOFWme5OPixSLWz0Ck44zlNbPh4zAKv4o6u5prAXg2zu3SlGqoxBpFYAJ0PfytUk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "udpateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"smartwatch\",\r\n    \"price\": 344,\r\n    \"image\": \"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJEzdL-P5pSyqvc0Q39QfFcOb-zWqMsMdTphsb0nJ-uuQ4fkU3k7BSvxPvOFWme5OPixSLWz0Ck44zlNbPh4zAKv4o6u5prAXg2zu3SlGqoxBpFYAJ0PfytUk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/product/6792a55f34744878d07ee162",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"product",
+						"6792a55f34744878d07ee162"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
