@@ -1,4 +1,5 @@
 import { Container, Flex, Icon, Text, VStack, SimpleGrid, Box, useColorMode } from '@chakra-ui/react';
+import { Link, Links } from 'react-router-dom';
 import { color } from 'framer-motion';
 import React from 'react';
 import { MdOutlineStorefront } from "react-icons/md";
@@ -28,11 +29,21 @@ const HomePage = () => {
                 </Text>
                 <Icon as={MdOutlineStorefront} fontSize={27} color="cyan.400" _hover={{color: "blue.400"}} />
             </Flex>
+
+            <Text
+                fontSize={'xl'}
+                fontWeight={"semibold"}
+                fontStyle={"italic"}
+                color={"gray.500"}
+            >
+                No Products Found 😢 {" "}
+                <Link to={"/create"}>
+                        <Text as='span' color='blue.500' _hover={{ textDecoration: "underline" }}>
+							Create a product
+                        </Text>
+                </Link>
+            </Text>
         </VStack>
-        <SimpleGrid mt={6} columns={2} spacingX='30px' spacingY='30px'>
-            <Box bg = {colorMode=='light' ? "gray.400" : "blue.800"}
-                height='140px' borderRadius={"md"}></Box>
-        </SimpleGrid>
     </Container>
   );
 }
