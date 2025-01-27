@@ -7,8 +7,17 @@ const ProductCard = ({product}) => {
     const textColor = useColorModeValue("gray.600", "gray.200");
     const bg = useColorModeValue("white", "gray.800");
 
-    const {deleteProduct, fetchProducts } = useProductStore();
+    const {deleteProduct} = useProductStore();
     const toast = useToast();
+
+    const handleDelete = async(pid) => {
+        const {success, message} = await deleteProduct(pid);
+        toast({
+            title: success== true ? "Deletion Success" : "Deletion Faliure",
+            description: message,
+            status: success==true ? "success" : "error"
+        });
+    };
   return (
     <Box
         shadow={'lg'}
@@ -33,17 +42,7 @@ const ProductCard = ({product}) => {
                 <IconButton icon={<EditIcon />} colorScheme='blue' />
                 <IconButton
                     icon={<DeleteIcon />}
-                    onClick={async() => {
-
-                        const {success, message} = await deleteProduct(product._id);
-                        console.log(success,message);
-                        toast({
-                            title: success== true ? "Success" : "Faliure",
-                            description: message,
-                            status: success==true ? "success" : "error"
-                        });
-                        fetchProducts();
-                    }}
+                    onClick={() => handleDelete(product._id)}
                     colorScheme='red'
                 />
             </HStack>
