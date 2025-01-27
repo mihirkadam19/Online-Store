@@ -57,3 +57,5 @@ Using useProductStore in Components:
 When you call useProductStore in your component:
 Zustand connects you to the store.
 You get access to the state (products) and any updater functions (setProducts) that were defined in the callback.
+
+Toast is used to make the pop ups.

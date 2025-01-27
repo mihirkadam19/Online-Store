@@ -1,4 +1,4 @@
-import { Button, Container, Flex, HStack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Button, Container, Flex, HStack, Text, useColorMode, useColorModeValue, useToast } from '@chakra-ui/react';
 import React from 'react';
 import { FaRegPlusSquare } from "react-icons/fa";
 import { Link, Links } from 'react-router-dom';
@@ -10,6 +10,7 @@ import { keyframes } from "@emotion/react";
 
 const Navbar = () => {
     const {colorMode, toggleColorMode} = useColorMode();
+    const toast = useToast();
 
     const rattle = keyframes`
         0% { transform: rotate(0deg); color:violet;}
@@ -66,7 +67,17 @@ const Navbar = () => {
                 </Link>
 
                 <Button
-                    onClick={toggleColorMode}
+                    //onClick={toggleColorMode}
+                    onClick= {()=>{
+                        toggleColorMode();
+                        toast({
+                            title: "Theme changed",
+                            description: colorMode=="light" ? "Dark Mode on" : "Light Mode on",
+                            status: "info",
+                            duration: 1400,
+                        })
+
+                    }}
                     _hover={{transform: useColorModeValue("scale(0.90)","scale(1.1)")}}    
                 >
                         {colorMode=="light" ? <IoMoon color='orange' fontSize={20} />: <LuSun color='yellow' fontSize={20}/>}
