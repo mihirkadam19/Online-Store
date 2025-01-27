@@ -16,12 +16,15 @@ const ProductCard = ({product}) => {
     >
         <Image src={product.image} alt={product.name} h={48} w={'full'} objectFit={'cover'} />
         <Box p={4}>
-            <Heading as={'h3'} size={'md'} mb={2}>
-                {product.name}
-            </Heading>
-            <Text fontWeight={'bold'} fontSize={'xl'} color={textColor} mb={4}>
-                {product.price}
-            </Text>
+            <HStack justifyContent={"space-between"}>
+                <Heading as={'h3'} size={'md'} mb={2}>
+                    {product.name}
+                </Heading>
+                <Text fontWeight={'bold'} fontSize={'xl'} color={textColor} mb={4}>
+                    $ {product.price}
+                </Text>
+            </HStack>
+            
             <HStack spacing={2}>
                 <IconButton icon={<EditIcon />} colorScheme='blue' />
                 <IconButton
