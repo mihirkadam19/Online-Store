@@ -30,6 +30,7 @@ const CreatePage = () => {
                 status: "success",
             })
         };
+        setNewProduct({name:"", price:"", image:""});
     };
 
     return (
