@@ -25,5 +25,17 @@ export const useProductStore = create((set) => ({
         const res = await fetch("/api/products");
         const data = await res.json();
         set({products: data.data});
+    },
+    deleteProduct: async(pid) => {
+        try{
+            const res = await fetch(`api/products/${pid}`,{
+                method: "DELETE"
+            })
+            const data = await res.json();
+            return{success: data.success , message: data.message}
+        } catch(error){
+            console.log(false,"oh no");
+            return{success: false, message:"Internal Server Error"}
         }
+    }
 }));

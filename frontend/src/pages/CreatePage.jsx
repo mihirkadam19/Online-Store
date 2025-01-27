@@ -30,7 +30,7 @@ const CreatePage = () => {
                 status: "success",
             })
         };
-        setNewProduct({name:"", price:"", image:""});
+        setNewProduct({name:"", price:"", image:""}); //how does this work?
     };
 
     return (
