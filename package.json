@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "backend": "NODE_ENV=development backend/server.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "NODE_ENV=production node backend/server.js"
+    "start": "NODE_ENV=production node ./backend/server.js"
   },
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://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@github.com/mk2436/Online-Store.git"
+    "url": "git+https://github.com/mk2436/Online-Store.git"
   },
   "author": "",
   "license": "ISC",
