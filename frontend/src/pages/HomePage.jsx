@@ -15,7 +15,7 @@ const HomePage = () => {
     }, [fetchProducts]);
 
     return (
-        <Container maxW={"container.xl"} margin={10}>
+        <Container maxW={"container.xl"} marginTop={10}>
             <VStack >
                 <Flex
                     align={"center"}
