@@ -12,7 +12,7 @@ const HomePage = () => {
     
     useEffect(() => {
         fetchProducts();
-    }, [fetchProducts]);
+    }, [fetchProducts, products]);
 
     return (
         <Container maxW={"container.xl"} marginTop={10}>
